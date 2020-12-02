@@ -1,0 +1,40 @@
+<%- include('partials/header'); -%>
+<h1 style="text-align: center;">Tối ưu câu truy vấn</h1>
+<p>Truy vấn các nhà hàng bán Sushi, có nhiều hơn 50,000 lượt đánh giá, sắp xếp giảm dần theo số sao</p>
+<table style="margin:0 auto;">
+  <tr>
+    <td> <b> Số Chỉ mục duyệt qua </b> </td>
+    <td><%= info.totalKeysExamined %></td>
+  </tr>
+  <tr>
+    <td> <b> Số Document duyệt qua </b></td>
+    <td><%= info.totalDocsExamined %></td>
+  </tr>
+  <tr>
+    <td> <b> Số Document trả về</b> </td>
+    <td><%= info.nReturned %> </td>
+  </tr>
+  <tr>
+    <td> <b>Thời gian truy vấn </b></td>
+    <td><%= info.executionTimeMillis %> ms</td>
+  </tr>
+</table>
+<br/><hr/><br/>
+<table style="margin:0 auto; width: 80%">
+  <tr>
+    <th>Tên quán</th>
+    <th>Món ăn</th>
+    <th>Số lượt đánh giá</th>
+    <th>Số sao</th>
+  </tr>
+  <% startingContent.forEach(function(post){%>
+  <tr>
+    <td><a href="/restaurant/<%= post._id %>" ><%= post.name %></a></td>
+    <td><%= post.cuisine %></td>
+    <td><%= post.quality.reviews %></td>
+    <td><%= post.stars %></td>
+  </tr>
+
+  <% }); %>
+
+</table>

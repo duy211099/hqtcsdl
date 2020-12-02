@@ -1,0 +1,9 @@
+<%- include('partials/header'); -%>
+
+<form action="/restaurant/<%= post._id %>" method="POST">
+    <label for="name">Tên quán:</label><br>
+    <input type="text" id="name" name="name" value="<%= post.name %>" ><br>
+    <label for="cuisine">Món ăn:</label><br>
+    <input type="text" id="cuisine" name="cuisine" value="<%= post.cuisine %>" ><br><br>
+    <input type="submit" value="Submit">
+  </form> 

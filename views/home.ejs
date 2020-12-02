@@ -1,0 +1,20 @@
+<%- include('partials/header'); -%>
+<h1>Trang chủ</h1>
+<table style="margin:0 auto; width: 80%">
+  <tr>
+    <th>Tên quán</th>
+    <th>Món ăn</th>
+    <th>Số lượng đánh giá</th>
+    <th>Số sao</th>
+  </tr>
+  <% startingContent.forEach(function(post){%>
+  <tr>
+    <td><a href="/restaurant/<%= post._id %>" ><%= post.name %></a></td>
+    <td><%= post.cuisine %></td>
+    <td><%= post.quality.reviews %></td>
+    <td><%= post.stars %></td>
+  </tr>
+
+  <% }); %>
+
+</table>
